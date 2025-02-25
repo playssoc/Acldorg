@@ -9,33 +9,58 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
             text-align: center;
         }
         header {
-            padding: 2em 1em;
+            padding: 1em;
+        }
+        nav button {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        nav button:focus {
+            outline: 3px solid #00bfff;
+        }
+        nav ul {
+            display: none;
+            padding: 0;
+        }
+        nav ul.active {
+            display: block;
+            list-style: none;
+            padding-top: 1em;
+        }
+        nav ul li a {
+ text-decoration: none;
+            color: #00bfff;
+            font-size: 1.2em;
         }
         h1 {
-            font-size: 4em;
-            margin: 0;
-            background: linear-gradient(90deg, #00bfff, #ff00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3em;
+            margin: 0.5em 0;
         }
         p {
             font-size: 1.5em;
-            margin: 0.5em 0 2em;
         }
-
+        hr {
+            border: 1px solid #444;
+            margin: 2em 0;
+        }
+        
         /* Button styling */
         .download-btn {
             display: inline-block;
             padding: 1em 2em;
             font-size: 1.5em;
             color: #000;
-           background: linear-gradient(90deg, #00bfff, #ff00ff);
+            background: linear-gradient(90deg, #00bfff, #ff00ff);
             text-decoration: none;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
@@ -47,8 +72,7 @@
             outline: 3px solid #ff00ff;
         }
 
-        /* How it works section */
-        section {
+        /* How it works section */ section {
             padding: 2em 1em;
         }
         h2 {
@@ -68,49 +92,35 @@
 
         /* Footer */
         footer {
-            padding: 2em 1em;
+            padding: 1em;
         }
-        footer a {
+        footer a, footer button {
             color: #00bfff;
             text-decoration: none;
-            font-size: 1.2em;
-            margin: 0 1em;
+            margin: 0.5em;
         }
-        footer a:hover, footer a:focus {
-            text-decoration: underline;
+        footer button {
+            background: none;
+            border: 2px solid #fff;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+        footer button:focus {
             outline: 3px solid #00bfff;
+        }
+        @media (max-width: 800px) {
+            .articles {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Zipitto Download</h1>
-    <p>the best and simplest way to manage files</p>
-</header>
-
-<section>
-    <p>contact us on X for support. Lightning fast, ultra secure, and completely free.</p>
-    <a href="#" class="download-btn" download>Download Now</a>
-</section>
-
-<section>
-    <h2>How It Works</h2>
-    <p>With this tool, zipping or unzipping files becomes as easy as clicking a button — literally. Here’s how it works:</p>
-    <ol>
-        <li>Start the program.</li>
-        <li>Press the spacebar.</li>
-        <li>Select a <code>.zip</code> file to uncompress, or choose a folder/file to compress.</li>
-        <li>Once the compression or uncompression is complete, the program automatically opens the folder where your new file or folder is located.</li>
-    </ol>
-</section>
-
-<footer>
-    <p>Connect with us:</p>
-    <a href="#">Twitter</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">GitHub</a>
-</footer>
-
-</body>
-</html>
+    <nav aria-label="Main Navigation">
+        <button aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu()">Menu</button>
+        <ul id="nav-menu">
+            <li><a href="https://zipitto.com">Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="
